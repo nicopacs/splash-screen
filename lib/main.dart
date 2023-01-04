@@ -7,14 +7,30 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Group Project",
+      theme: ThemeData(
+        primarySwatch: Colors.teal 
+      ),
+      home: const HomePage(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
@@ -53,5 +69,6 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
 
 
